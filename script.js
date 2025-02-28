@@ -1,8 +1,9 @@
 // RPS
 // create a function startGame
 function startGame() {
-  // initialze variables for comp name
+  // initialze variables for comp name and user name
   const botName = "Computer";
+  const userName = "You";
   // initialize an object score with properties won and lost set to zero both
   const tally = {
     won: 0,
@@ -27,7 +28,7 @@ function startGame() {
 
     while (keepGoing) {
       // store string userAnswer in prompt("Rock, Paper or Scissors?")->get this from the A.A. array
-      userAnswer = prompt("Rock, Paper or scissors?").toLowerCase();
+      userAnswer = prompt("Rock, Paper or Scissors?").toLowerCase();
       // if userAnswer lowercased is either of those in A.A array lowerCased keepGoing is False
       if (acceptableAnswers.includes(userAnswer)) {
         keepGoing = false;
@@ -35,10 +36,19 @@ function startGame() {
         alert("Invalid input. Enter: Rock, Paper or Scissors.");
       }
     }
+    // ifbot answer same as userAnswer
+    let roundWinner = undefined;
+    if (botAnswer === userAnswer) {
+      roundWinner = userName;
+    } else {
+      roundWinner = botName;
+    }
+    alert(
+      `${userName} threw: ${userAnswer}.\n${botName} threw: ${botAnswer}.\n${roundWinner} won this round.`
+    );
   }
 }
 
-// ifbot answer same as userAnswer
 // object.won + 1 to current
 // alert the winner of the round to be user
 // else object.lost + 1 to current
