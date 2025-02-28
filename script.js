@@ -4,6 +4,8 @@ function startGame() {
   // initialze variables for comp name and user name
   const botName = "Computer";
   const userName = "You";
+  //Set rounds
+  const rounds = 5;
   // initialize an object score with properties won and lost set to zero both
   const tally = {
     won: 0,
@@ -23,7 +25,7 @@ function startGame() {
     return acceptableAnswers[Math.floor(Math.random() * 3)];
   }
   // Loop of 5 rounds
-  for (let gameRound = 1; gameRound <= 3; gameRound++) {
+  for (let gameRound = 1; gameRound <= rounds; gameRound++) {
     const botAnswer = makeBotAnswer(acceptableAnswers);
     //   initialize and store in botanswer the result of makebotanswr
     // initialize and set a keepGoing boolean variable as true
@@ -112,7 +114,10 @@ function startGame() {
   //   SortedTallierResult
   const sortedTalliedResult = [...talliedResult].sort((a, b) => b[0] - a[0]);
   //   If draw is highest in tallied, take the second sorted array
-  if (sortedTalliedResult[0][1] === talliedResult[1][1]) {
+  if (
+    sortedTalliedResult[0][1] === talliedResult[1][1] &&
+    tally.draw === rounds
+  ) {
     alert(sortedTalliedResult[1][1]);
   }
   //   else take the first array
