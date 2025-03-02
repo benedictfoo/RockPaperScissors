@@ -4,7 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-    <script src="script.js"></script>
+    <script defer type="module" src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>Game</h1>
+      <div class="playingButtonsContainer">
+        <button class="playingButton rock">Rock</button>
+        <button class="playingButton paper">Paper</button>
+        <button class="playingButton scissors">Scissors</button>
+      </div>
+      <div>
+        <h2 class="game-status">Scores</h2>
+        <div class="tally">
+          <div class="player">
+            <h3 class="player-name"></h3>
+            <p class="player-score">0</p>
+          </div>
+          <div class="bot">
+            <h3 class="bot-name"></h3>
+            <p class="bot-score">0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
