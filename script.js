@@ -114,5 +114,4 @@ function startGame() {
   }
 }
 
-// run startGame()
 // startGame();
